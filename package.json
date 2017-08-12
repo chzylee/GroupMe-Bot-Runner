@@ -1,0 +1,19 @@
+{
+  "name": "mrpofojr",
+  "version": "1.0.0",
+  "description": "GroupMe bot for Harvest YG",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chzylee/mrPofoJr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chzylee/mrPofoJr/issues"
+  },
+  "homepage": "https://github.com/chzylee/mrPofoJr#readme"
+}
