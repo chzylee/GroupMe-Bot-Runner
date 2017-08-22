@@ -11,14 +11,14 @@ module.exports = class GroupMeBot {
 
     formTextReply(text) {
         return {
-            "bot_id": config.bot_id,
+            "bot_id": '54168c31dbe618f8fd5739edd0',
             "text": text
         }
     }
 
     messageHandler(message) {
-        setLower(message.text);
-        return formTextReply(this.lower + 'pofo');
+        this.setLower(message.text);
+        return this.formTextReply(this.lower + 'pofo');
     }
     
 }
