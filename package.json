@@ -1,7 +1,7 @@
 {
   "name": "mrpofojr",
   "version": "1.0.0",
-  "description": "GroupMe bot for Harvest YG",
+  "description": "GroupMe bot for Harvest YG. Bot_id: 54168c31dbe618f8fd5739edd0",
   "main": "index.js",
   "scripts": {
     "test": "test"
