@@ -1,0 +1,44 @@
+'use strict';
+const express = require('express');
+const _bot = require('./src/main');
+
+// create LINE SDK config from env variables
+const config = {
+  botId: process.env.BOT_ID,
+  groupId: process.env.GROUP_ID,
+  accessToken: process.env.ACCESS_TOKEN
+};
+
+// create Express app
+// about Express itself: https://expressjs.com/
+const app = express();
+const bot = new _bot();
+
+// setup view
+app.get('/', function(request, response) {
+  response.sendfile('./views/main.html');
+});
+
+// register a webhook handler with middleware
+// about the middleware, please refer to doc
+app.post('/webhook', (req, res) => {
+  Promise
+    .all(req.body.message.map(handleEvent))
+    .then((result) => res.json(result));
+});
+
+// event handler
+function handleEvent(message) {
+//     return Promise.resolve(null);
+
+  // handle message
+  var reply = bot.messageHandler(message);
+
+  Promise.resolve(reply);
+}
+
+// listen on port
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`listening on ${port}`);
+});
