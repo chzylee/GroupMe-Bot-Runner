@@ -9,16 +9,16 @@ module.exports = class GroupMeBot {
         this.lower = text.toLowerCase();
     }
 
-    formTextReply(text) {
+    formTextReply(text, config) {
         return {
-            "bot_id": '54168c31dbe618f8fd5739edd0',
+            "bot_id": config.botId,
             "text": text
         }
     }
 
-    messageHandler(message) {
+    messageHandler(message, config) {
         this.setLower(message.text);
-        return this.formTextReply(this.lower + 'pofo');
+        return this.formTextReply(this.lower + 'pofo', config);
     }
     
 }
