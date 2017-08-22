@@ -30,6 +30,7 @@ app.post('/webhook', (req, res) => {
 // event handler
 function handleEvent(message) {
   // handle message
+  console.log(message);
   var reply = bot.messageHandler(message, config);
   Promise.resolve(reply);
 }
