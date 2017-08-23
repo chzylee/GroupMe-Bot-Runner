@@ -4,7 +4,8 @@
   "description": "GroupMe bot for Harvest YG.",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jasmine",
+    "runreq": "node spec/testrequests.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,9 @@
     "jasmine": "^2.7.0"
   },
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.4",
+    "multer": "^1.3.0",
     "request": "^2.81.0"
   }
 }

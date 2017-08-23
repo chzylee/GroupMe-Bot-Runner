@@ -1,5 +1,8 @@
 'use strict';
 const express = require('express');
+var bodyParser = require('body-parser');
+var multer = require('multer'); // v1.0.5
+var upload = multer(); // for parsing multipart/form-data
 const _bot = require('./src/main');
 
 // create LINE SDK config from env variables
@@ -14,6 +17,9 @@ const config = {
 const app = express();
 const bot = new _bot();
 
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
 // setup view
 app.get('/', function(request, response) {
   response.sendfile('./views/main.html');
@@ -21,10 +27,9 @@ app.get('/', function(request, response) {
 
 // register a webhook handler with middleware
 // about the middleware, please refer to doc
-app.post('/webhook', (req, res) => {
-  Promise
-    .all(req.body.message.map(handleEvent))
-    .then((result) => res.json(result));
+app.post('/webhook', upload.array(), (req, res) => {
+  console.log(req.body);
+  res.json(req.body);
 });
 
 // event handler
