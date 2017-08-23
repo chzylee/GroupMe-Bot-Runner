@@ -34,7 +34,7 @@ module.exports = {
             json: message
         }
         request(options, (error, response, body) => {
-            if(error !== undefined){
+            if(error){
                 console.log(error);
             }
         });
