@@ -45,8 +45,10 @@ module.exports = class GroupMeBot {
             json: reply
         }
         
+        console.log(options);
+
         request(options, (error, response, body) => {
-            if(error !== undefined){
+            if(error){
                 console.log(error);
             }
         });
