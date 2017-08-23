@@ -28,6 +28,7 @@ app.get('/', function(request, response) {
 // register a webhook handler with middleware
 // about the middleware, please refer to doc
 app.post('/webhook', upload.array(), (req, res) => {
+  console.log('logging body');
   console.log(req.body);
   res.json(req.body);
 });
