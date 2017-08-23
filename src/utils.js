@@ -1,3 +1,5 @@
+const request = require('request');
+
 module.exports = {
 
     contains(lower, options) {
@@ -16,6 +18,26 @@ module.exports = {
             }
         }
         return false; // if none of the options returned true
+    },
+
+    formTextReply(text, botId) {
+        return {
+            "bot_id": botId,
+            "text": text
+        }
+    },
+
+    respond(message){
+        var options = {
+            uri: "https://api.groupme.com/v3/bots/post",
+            method: "POST",
+            json: message
+        }
+        request(options, (error, response, body) => {
+            if(error !== undefined){
+                console.log(error);
+            }
+        });
     }
 
 }

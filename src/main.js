@@ -1,44 +1,9 @@
-const request = require('request');
+'use strict'
 const utils = require('./utils');
 
-module.exports = class GroupMeBot {
-    constructor() {
-        this.on = true;
-        this.resUrl = 'https://api.groupme.com/v3/bots/post';
-    }
-
-    setLower(text) {
-        this.lower = text.toLowerCase();
-    }
-
-    formTextReply(text, config) {
-        return {
-            "bot_id": config.botId,
-            "text": text
-        }
-    }
-
-    respond(message){
-        var options = {
-            uri: this.resUrl,
-            method: "POST",
-            json: message
-        }
-        
-        request(options, (error, response, body) => {
-            if(error !== undefined){
-                console.log(error);
-            }
-        });
-    }
-
-    messageHandler(message, config) {
-        console.log('handling message');
-        console.log(message);
-        this.setLower(message.text);
-        var reply = this.formTextReply(this.lower, config);
-        console.log('replying: ' + this.lower);
-        this.respond(reply);
-        return reply;
-    }
+function handler(bot, message){
+    var reply = bot.messageHandler(message);    // get reply from bot
+    utils.respond(reply);                       // make request to API with reply
 }
+
+module.exports = handler;

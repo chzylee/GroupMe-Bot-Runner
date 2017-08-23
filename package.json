@@ -1,7 +1,7 @@
 {
   "name": "mrpofojr",
   "version": "1.0.0",
-  "description": "GroupMe bot for Harvest YG.",
+  "description": "GroupMe bot runner inspired by https://github.com/kyle1320/groupme-bot/blob/master/botrunner.js.",
   "main": "index.js",
   "scripts": {
     "test": "jasmine",
