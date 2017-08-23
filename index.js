@@ -29,7 +29,7 @@ app.get('/', function(request, response) {
 // about the middleware, please refer to doc
 app.post('/webhook', upload.array(), (req, res) => {
     if (req.body.sender_type !== 'bot') {
-        bot.messageHandler(message, config);
+        bot.messageHandler(req.body, config);
         res.json(req.body);
     }
 });
