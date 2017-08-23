@@ -38,8 +38,8 @@ app.post('/webhook', upload.array(), (req, res) => {
 // event handler
 function handleEvent(message) {
     // handle message
-    console.log('logging message');
-    console.log(message);
+    // console.log('logging message');
+    // console.log(message);
     return bot.messageHandler(message, config);
 }
 
