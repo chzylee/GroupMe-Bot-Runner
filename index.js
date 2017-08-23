@@ -24,6 +24,7 @@ app.get('/', function(request, response) {
 app.post('/:botName', upload.array(), (req, res) => {   // when bot webhook is called
     if (req.body.sender_type !== 'bot') {               // if message was not sent by a bot
         var bot = bots.get(botName);                    // get corresponding bot
+        console.log('running ' + botName);
         handler(bot, req.body);                         // handle message
         res.json(req.body);                             // return dummy response
     }
