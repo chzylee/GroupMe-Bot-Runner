@@ -29,7 +29,7 @@ module.exports = class GroupMeBot {
         console.log('handling message');
         console.log(message);
         this.setLower(message.text);
-        var reply = this.formTextReply(this.lower + 'pofo', config);
+        // var reply = this.formTextReply(this.lower + 'pofo', config);
         console.log('replying: ' + this.lower + 'pofo');
         // this.respond(reply);
         var options = {
@@ -37,11 +37,11 @@ module.exports = class GroupMeBot {
             method: "POST",
             json: {
                 "bot_id": config.botId,
-                "text": text
+                "text": this.lower + 'pofo'
             }
         }
         
-        console.log(options);
+        console.log(JSON.stringify(options));
 
         request(options, (error, response, body) => {
             if(error){
