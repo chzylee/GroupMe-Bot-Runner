@@ -11,6 +11,13 @@ module.exports = class GroupMeBot {
         this.lower = text.toLowerCase();
     }
 
+    formTextReply(text, config) {
+        return {
+            "bot_id": config.botId,
+            "text": text
+        }
+    }
+
     respond(message){
         var options = {
             uri: this.resUrl,
@@ -29,25 +36,8 @@ module.exports = class GroupMeBot {
         console.log('handling message');
         console.log(message);
         this.setLower(message.text);
-        // var reply = this.formTextReply(this.lower + 'pofo', config);
-        console.log('replying: ' + this.lower + 'pofo');
-        // this.respond(reply);
-        var options = {
-            uri: this.resUrl,
-            method: "POST",
-            json: {
-                "bot_id": config.botId,
-                "text": this.lower + 'pofo'
-            }
-        }
-        
-        console.log(JSON.stringify(options));
-
-        request(options, (error, response, body) => {
-            if(error){
-                console.log(error);
-            }
-        });
-        return 999; 
+        var reply = this.formTextReply(this.lower, config);
+        console.log('replying: ' + this.lower);
+        this.respond(reply);
     }
 }

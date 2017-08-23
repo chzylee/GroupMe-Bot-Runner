@@ -29,18 +29,10 @@ app.get('/', function(request, response) {
 // about the middleware, please refer to doc
 app.post('/webhook', upload.array(), (req, res) => {
     if (req.body.sender_type !== 'bot') {
-        handleEvent(req.body);
+        bot.messageHandler(message, config);
         res.json(req.body);
     }
 });
-
-// event handler
-function handleEvent(message) {
-    // handle message
-    // console.log('logging message');
-    // console.log(message);
-    return bot.messageHandler(message, config);
-}
 
 // listen on port
 const port = process.env.PORT || 3000;
