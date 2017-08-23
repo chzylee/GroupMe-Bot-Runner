@@ -20,6 +20,7 @@ app.get('/', function(request, response) {
 // about the middleware, please refer to doc
 app.post('/:botName', (req, res) => {   // when bot webhook is called
     if (req.body.sender_type !== 'bot') {               // if message was not sent by a bot
+        var botName = req.params.botName;               // get botName
         var bot = bots.get(botName);                    // get corresponding bot
         console.log('running ' + botName);
         handler(bot, req.body);                         // handle message
