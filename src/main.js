@@ -34,7 +34,7 @@ module.exports = class GroupMeBot {
 
     messageHandler(message, config) {
         this.setLower(message.text);
-        reply = this.formTextReply(this.lower + 'pofo', config);
+        var reply = this.formTextReply(this.lower + 'pofo', config);
         this.respond(reply);
         return 999; 
     }
