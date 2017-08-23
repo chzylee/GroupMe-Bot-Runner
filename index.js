@@ -8,7 +8,9 @@ const handler = require('./src/main');
 // create Express app
 // about Express itself: https://expressjs.com/
 const app = express();
+
 app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 // setup view
 app.get('/', function(request, response) {
