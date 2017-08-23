@@ -31,7 +31,8 @@ app.post('/webhook', upload.array(), (req, res) => {
   // console.log('logging body');
   // console.log(req.body);
   // res.json(req.body);
-    res.sendStatus(handleEvent(req.body));
+    handleEvent(req.body);
+    res.json(req.body);
 });
 
 // event handler
