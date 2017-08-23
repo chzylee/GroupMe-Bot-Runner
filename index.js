@@ -31,15 +31,14 @@ app.post('/webhook', upload.array(), (req, res) => {
   // console.log('logging body');
   // console.log(req.body);
   // res.json(req.body);
-    res.json(handleEvent(req.body));
+    res.sendStatus(handleEvent(req.body));
 });
 
 // event handler
 function handleEvent(message) {
     // handle message
     console.log(message);
-    var reply = bot.messageHandler(message, config);
-    Promise.resolve(reply);
+    return bot.messageHandler(message, config);
 }
 
 // listen on port
