@@ -38,7 +38,18 @@ module.exports = class GroupMeBot {
         this.setLower(message.text);
         var reply = this.formTextReply(this.lower + 'pofo', config);
         console.log('replying: ' + this.lower + 'pofo');
-        this.respond(reply);
+        // this.respond(reply);
+        var options = {
+            uri: this.resUrl,
+            method: "POST",
+            json: reply
+        }
+        
+        request(options, (error, response, body) => {
+            if(error !== undefined){
+                console.log(error);
+            }
+        });
         return 999; 
     }
 }
