@@ -4,7 +4,7 @@ const utils = require('./utils');
 module.exports = class GroupMeBot {
     constructor() {
         this.on = true;
-        this.baseUrl = 'https://api.groupme.com/v3';
+        this.resUrl = 'https://api.groupme.com/v3/bots/post';
     }
 
     setLower(text) {
@@ -20,7 +20,7 @@ module.exports = class GroupMeBot {
 
     respond(message){
         var options = {
-            uri: this.baseUrl + "/bots/post",
+            uri: this.resUrl,
             method: "POST",
             json: message
         }
