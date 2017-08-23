@@ -33,8 +33,8 @@ module.exports = class GroupMeBot {
         console.log('replying: ' + this.lower + 'pofo');
         // this.respond(reply);
         var options = {
-            uri: "https://api.groupme.com/v3/bots/post?bot_id=" + config.botId + "&text=Hello+world",
-            method: "POST"
+            url: "https://api.groupme.com/v3/bots/post?bot_id=" + config.botId + "&text=Hello+world",
+            method: 'POST'
         }
         
         console.log(JSON.stringify(options));
