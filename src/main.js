@@ -34,7 +34,7 @@ module.exports = class GroupMeBot {
 
     messageHandler(message, config) {
         console.log('handling message');
-        console.log(mesage);
+        console.log(message);
         this.setLower(message.text);
         var reply = this.formTextReply(this.lower + 'pofo', config);
         console.log('replying: ' + this.lower + 'pofo');
