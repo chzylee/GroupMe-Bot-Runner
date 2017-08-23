@@ -11,13 +11,6 @@ module.exports = class GroupMeBot {
         this.lower = text.toLowerCase();
     }
 
-    formTextReply(text, config) {
-        return {
-            "bot_id": config.botId,
-            "text": text
-        }
-    }
-
     respond(message){
         var options = {
             uri: this.resUrl,
@@ -42,7 +35,10 @@ module.exports = class GroupMeBot {
         var options = {
             uri: this.resUrl,
             method: "POST",
-            json: reply
+            json: {
+                "bot_id": config.botId,
+                "text": text
+            }
         }
         
         console.log(options);
