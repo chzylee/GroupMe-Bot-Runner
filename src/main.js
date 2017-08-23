@@ -39,5 +39,6 @@ module.exports = class GroupMeBot {
         var reply = this.formTextReply(this.lower, config);
         console.log('replying: ' + this.lower);
         this.respond(reply);
+        return reply;
     }
 }

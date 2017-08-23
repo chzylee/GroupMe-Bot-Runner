@@ -30,9 +30,9 @@ describe('GroupMe bot', function() {
         }
     });
 
-    it('adds pofo at end of text given', function() {
+    it('echos message given', function() {
         message.text = 'hi';
         var reply = bot.messageHandler(message, config);
-        expect(reply.text).toBe('hipofo');
+        expect(reply.text).toBe(message.text);
     });
 });
