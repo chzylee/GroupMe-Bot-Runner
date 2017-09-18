@@ -2,7 +2,7 @@
 const utils = require('../lib/utils');
 const puns = require('../lib/puns');
 
-module.exports = class SeedBot {
+module.exports = class PunBot {
     constructor(id) {
         this.name = 'punbot';
         this.id = id;
