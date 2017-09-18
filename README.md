@@ -4,7 +4,7 @@ Server that runs a set of provided GroupMe bots. When a bot's webhook is called,
 
 ## Bot Structure
 
-Bots are non-human members of GroupMe groups that respond to messages automatically. Each bot in this runner has a handler that decides what to do with the message it receives, and that handler returns an appropriate response for that bot. Each bot is created using its unique ID, which is obtained as an environment variable.
+Bots are non-human members of GroupMe groups that respond to messages automatically. Each bot in this runner has a handler that decides what to do with the message it receives, and that handler returns an appropriate response for that bot. Each bot is created using its unique ID, which is obtained as an environment variable. Bots can be reused in more than one group; however, due to GroupMe structure, a new bot must be created in GroupMe developers site and the new ID must be exported for the new bot.
 
 ### Seedbot
 
