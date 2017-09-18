@@ -1,9 +1,9 @@
 'use strict'
-const utils = require('../utils');
+const utils = require('../lib/utils');
 
 module.exports = class SeedBot {
     constructor(id) {
-        this.name = 'seedbot'
+        this.name = 'seedbot';
         this.id = id;
     }
 
