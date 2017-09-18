@@ -16,4 +16,4 @@ This bot runner runs on an Express.js server that simply responds to post reques
 
 ## Utilities
 
-All utility functions in [utils.js](./src/utils.js) are simple functions that all bots may need. These provide basic functions such as checking matching parts of strings, and creating the actual response message. To use these utilities, import utils.js and call the functions from it.
+All utility functions in [utils.js](./src/lib/utils.js) are simple functions that all bots may need. These provide basic functions such as checking matching parts of strings, and creating the actual response message. To use these utilities, import utils.js and call the functions from it.
