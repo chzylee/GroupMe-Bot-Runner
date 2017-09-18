@@ -1,5 +1,5 @@
 'use strict'
-const utils = require('../utils');
+const utils = require('../lib/utils');
 const puns = require('../lib/puns');
 
 module.exports = class SeedBot {
