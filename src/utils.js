@@ -23,7 +23,7 @@ module.exports = {
     },
 
     // returns random element from given array
-    randomFrom(arr){
+    randomFrom(arr) {
         var index = Math.ceil(Math.random() * (arr.length - 1));
         return arr[index];
     },
@@ -37,7 +37,7 @@ module.exports = {
     },
 
     // wraps http request to groupme api to send message back to group
-    respond(message){
+    respond(message) {
         var options = {
             uri: "https://api.groupme.com/v3/bots/post",
             method: "POST",
