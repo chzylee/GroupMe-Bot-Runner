@@ -4,6 +4,7 @@ const puns = require('../lib/puns');
 
 module.exports = class SeedBot {
     constructor(id) {
+        this.name = 'punbot'
         this.id = id;
         this.puns = puns;
     }
